@@ -1,0 +1,102 @@
+html
+    head
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        title Егор фотограф
+        style
+            include ./egor.css
+    body
+        .header-title#title МОЕ ЛИЦО
+        .header#menu        
+            .header-menu
+                .menu-selector#selector
+                .menu-item#m0 Мое лицо
+                .menu-item#m1 Портфолио
+                .menu-item#m2 Обо мне
+                .menu-item#m3 Заказать
+                .menu-item#m4 Контакты
+        .card.scroll#c0
+            .card-image-backgorund.card-one-back(style="background-image: url("+imgs.img1+");")
+            .greeting-text
+                .gt-name= text.s1
+                .gr-desc= text.s2
+
+        .card.scroll(pos="down")#c1
+            .gallery
+                each line,i in imgs.imgg
+                    .gallery-row(class="delay-"+i)
+                        each img, j in line
+                            .g-pic(style="background-image: url("+img+");")
+                                .g-pic-desc
+                                    .desc-name= text.textg['t'+i+''+j].n
+                                    .desc-desc= text.textg['t'+i+''+j].d
+
+        .card.scroll(pos="down")#c2
+            .card-3-background
+                .b-left-side(style="background-image: url("+imgs.img2+");")
+                .b-right-side
+            .sub-page.fade#l2s0
+                .b-left-side
+                .b-right-side
+                    .about-me-panel
+                        h1 !{text.s3}
+                        p !{text.s4}
+                        table
+                            each s,i in text.slist
+                                tr
+                                    td
+                                        p= (i+1) 
+                                    td !{s}
+
+                        p.rewiew= text.s5
+                        p.sign= text.s6
+
+            .sub-page.fade(pos="down")#l2s1
+                .b-left-side
+                .b-right-side
+                    .book-panel
+                        h1= text.s7
+                        input#name(autocomplete="false", type="text", name="name", placeholder=text.tb1)
+                        input.half-left#phone(autocomplete="false", type="text", name="phone", placeholder=text.tb2)
+                        input.half#email(autocomplete="false", type="text", name="email", placeholder=text.tb3)
+                        input#whatuneed(autocomplete="false", type="text", name="whatuneed", placeholder=text.tb4)
+                        .button#book= text.b1
+            .sub-page.fade(pos="down")#l2s2 
+                .b-left-side
+                .b-right-side
+                    .contact-panel
+                        h2= text.c2
+                        h3= text.c3
+
+                        p.split= text.c4
+                        p= text.c5
+                        p= text.c6                        
+
+                        p.split  
+                            a= text.phone
+                        p
+                            a= text.mail
+
+                        p.split.big
+                            a(href=text.vk)
+                                img(src="/Images/All/vk.png", alt="lol") 
+                            a(href=text.facebook)
+                                img(src="/Images/All/facebook.png", alt="") 
+                            a(href=text.insta)
+                                img(src="/Images/All/instagram-sketched.png", alt="")                             
+                            a(href=text.twitter)
+                                img(src="/Images/All/twitter.png", alt="") 
+        .card.scroll(pos="down")#c3
+            .so-nice-elijah
+                .so-nice-elijah-center
+                    h3 Created by
+                    h1 so<b>nice</b>
+                    h2 ELIJAH
+            
+        .text-overlay#submition
+            .ty-msg
+                h1= ty1
+                p= ty2 
+            
+        script
+            include ./egor.js

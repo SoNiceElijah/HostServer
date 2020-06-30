@@ -1,0 +1,25 @@
+{
+  "name": "hostserver",
+  "version": "1.0.0",
+  "description": "Express page host",
+  "main": "host.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SoNiceElijah/HostServer.git"
+  },
+  "author": "SoNiceElijah",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SoNiceElijah/HostServer/issues"
+  },
+  "homepage": "https://github.com/SoNiceElijah/HostServer#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "js-yaml": "^3.14.0",
+    "node-vk-bot-api": "^3.3.4",
+    "pug": "^3.0.0"
+  }
+}

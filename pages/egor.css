@@ -1,0 +1,709 @@
+body {
+    margin: 0;
+    background: #f1f1f1;
+
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+
+.card {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#c0 {
+    background: #000000;
+}
+
+#c1 {
+    background: #f1f1f1;
+}
+#c2 {
+    background: #4682db;
+}
+#c3 {
+    background: #242424;
+}
+
+
+
+
+.card-image-backgorund {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    
+}
+
+.card-one-back {
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    height: 100%;
+
+    opacity: 0.8;
+}
+
+
+
+
+
+.header-title {
+    position: absolute;
+    top: 20px;
+    left: 50px;
+
+    z-index: 20;
+    font-weight: 600;
+    color: #242424;
+    background: #f1f1f1;
+
+    padding: 10px;
+    border-radius: 5px;
+
+    transition: 0.2s;
+
+}
+
+.menu-item {
+    padding: 10px;
+    font-size: 16px;
+
+    font-weight: 400;
+
+    user-select: none;
+    cursor: pointer;
+    padding-bottom: 5px;
+
+    color: #242424;
+}
+
+.menu-item:hover {
+    color: #4e4e4e;
+}
+
+.menu-item[selected]
+{
+    border-bottom: 1px solid #242424;
+}
+
+.greeting-text {
+    position: absolute;
+    bottom: 200px;
+    right: 100px;
+}
+
+.gt-name {
+    font-weight: 300;
+    font-size: 63px;
+
+    color: #f1f1f1;
+}
+
+.gr-desc {
+    color: #d1d1d1;
+    font-size: 20px;
+}
+
+.gallery {
+    display: flex;
+
+    width: 100%;
+    height: 100%;
+
+    flex-direction: column;
+}
+
+.gallery-row {
+
+    display: flex; 
+    width: 100%;
+
+    flex: 1;
+
+    transition-duration:0.2s;
+    transition-timing-function: ease-out;
+
+    opacity: 1.0;
+    
+}
+
+
+
+.delay-0 {
+    
+    transition-delay: 0.2s;
+}
+
+.delay-1 {
+    
+    transition-delay: 0.3s;
+}
+
+
+.delay-2 {
+    
+    transition-delay: 0.4s;
+}
+
+
+
+.g-pic {
+
+    transition: ease-out 0.6s;
+    position: relative;
+    flex: 1;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    min-width: 300px;
+}
+
+.g-pic:hover .g-pic-desc 
+{
+    opacity: 1.0;
+}
+
+.text-overlay {
+
+    display: none;
+    
+    z-index: 50;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    opacity: 0.0;
+
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.7);
+
+    transition: 0.2s;
+}
+
+.ty-msg {
+    color: #f1f1f1;
+}
+
+.ty-msg h1 {
+    text-align: center;
+    font-size: 50px;
+}
+
+.ty-msg p {
+    text-align: center;
+    font-size: 18px;
+    margin-top: -15px;
+}
+
+
+
+.g-pic-desc {
+
+    transition: 0.2s;
+    opacity: 0.0;
+    background: rgba(0, 0, 0, 0.7);
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.desc-name {
+    color: #f1f1f1;
+    font-weight: 600;
+    padding: 40px;
+    padding-bottom: 0;
+}
+
+.desc-desc {
+    color: #f1f1f1;
+    padding: 40px;
+    padding-top: 0;
+}
+
+.menu-selector {
+    position: absolute;
+    border-bottom: 1px solid #242424;
+
+    transition: ease-in-out 0.2s;
+}
+
+.card-3-background {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.b-left-side {
+    flex: 1;
+    background-size: auto 100%;
+    background-position: center center;
+}
+
+.b-right-side {
+    flex: 1;
+    background: #f1f1f1;
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+    overflow: hidden;
+}
+
+.about-me-panel {
+    width: 80%;
+    max-width: 800px;
+    min-width: 300px;
+}
+
+.sub-page {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+}
+
+.sub-page .b-right-side {
+    background: transparent;
+}
+
+.about-me-panel table td {
+    vertical-align: top;
+}
+
+.about-me-panel table td:first-child p {
+    user-select: none;
+    
+    width: 30px;
+    height: 30px;
+
+    text-align: center;
+    line-height: 30px;
+
+    border: 1px solid #242424;
+    color: #242424;
+
+    font-size: 16px;
+}
+
+.about-me-panel table td:last-child {
+    font-size: 20px;
+    padding-left: 20px;
+}
+
+.about-me-panel p {
+    font-size: 20px;
+}
+
+p.rewiew  {
+    font-style: italic;
+    color: #3a3a3a;
+    margin-top: 40px;
+
+    padding-left: 100px;
+    text-align: justify;
+}
+
+p.sign  {
+    text-align: right;
+    font-style: italic;
+    color: #3a3a3a;
+    margin-top: -10px;
+}
+
+.book-panel {
+    width: 80%;
+    max-width: 800px;
+    min-width: 300px;
+
+    text-align: justify;
+}
+
+.book-panel input {
+    padding: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    background: transparent;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #3a3a3a;
+    color: #3a3a3a;
+
+    outline: none;
+} 
+
+.book-panel input.half {
+    width: 48%;
+}
+
+.book-panel input.half-left {
+    width: 48%;
+    margin-right: 4%;
+}
+
+.button {
+    height: 50px;
+    width: 300px;
+    line-height: 50px;
+    user-select: none;
+    cursor: pointer;
+    text-align: center;
+
+    margin-top: 30px;
+
+    color: #f1f1f1;
+    background: #4682db;
+    border-radius: 5px;
+
+    transition: 0.1s;
+}
+
+.button:hover {
+    background: #3269bb;
+}
+
+.contact-panel {
+    width: 80%;
+    max-width: 800px;
+    min-width: 300px;
+}
+
+.contact-panel h1 {
+    font-size: 54px;
+    font-weight: 300;
+
+    margin-bottom: 0;
+}
+
+
+.contact-panel h2 {
+    margin-top: -10px;
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+.contact-panel h3 {
+    font-weight: 400;
+    font-style: italic;
+    color: #3a3a3a;
+}
+
+.contact-panel p {
+    margin: 0;
+}
+
+.contact-panel p.split {
+    margin-top: 20px;
+}
+
+p.big {
+    height: 50px;
+}
+
+.contact-panel p img {
+    width: 15px;
+    height: 15px;
+
+    background: #3a3a3a;
+    border-radius: 5px;
+
+    padding: 8px;
+    cursor: pointer;
+    margin-right: 5px;
+
+    vertical-align: top;
+
+    transition: ease-in-out 0.1s;
+}
+
+.contact-panel p img:hover {
+    margin-top: -5px;
+}
+
+
+.so-nice-elijah {
+    display: flex;
+
+    width: 100%;
+    height: 100%;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.so-nice-elijah-center {
+    color: #f1f1f1;
+    user-select: none;
+}
+
+.so-nice-elijah-center h3 {
+    font-weight: 300;
+
+    margin: 0;
+}
+
+.so-nice-elijah-center h1 {
+    font-weight: 400;
+    font-size: 40px;
+
+    margin: 0;
+}
+
+.so-nice-elijah-center h2 {
+    font-weight: 300;
+    font-size: 40px;
+
+    margin: 0;
+    margin-top: -14px;
+}
+
+@media (min-width: 900px) {
+
+    body {
+        overflow: hidden;
+    }
+
+    .scroll {
+        position: absolute;
+        transition: 0.5s ease-in-out;
+        top: 0;
+    }
+
+    .scroll[pos="down"] {
+
+        top: 100%;
+        
+    }
+    
+    .scroll[pos="up"] {
+        top: -100%;
+    }
+    
+    .fade {
+        position: absolute;
+        transition-duration: 0.2s;
+        transition-timing-function: ease-in-out;
+        visibility: visible;
+        top: 0;
+        left: 0;
+        opacity: 1.0;
+        transition-delay: 0.2s;
+    }
+    
+    .fade[pos="down"] {
+    
+       transition-delay: 0.2s;
+       visibility: hidden;
+        opacity: 0.0;
+    
+        left: 10px;
+        
+    }
+    
+    .fade[pos="up"] {
+        
+        transition-delay: 0.2s;
+        visibility: hidden;
+        opacity: 0.0;
+    
+        left: -10px;
+    }
+
+    .header {
+        position: fixed;
+        z-index: 20;
+    
+        display: flex;
+        width: calc(100% - 50px);
+        padding-right: 50px;
+    
+        justify-content: flex-end;
+        opacity: 0.0;
+    
+        transition-duration: 0.2s;
+        transition-delay: 2.0s;
+    
+    }
+    
+    .header:hover {
+        opacity: 1.0;
+        transition-delay: 0.0s;
+       
+    }
+
+    .header-menu {
+        margin-top: 20px;
+        padding-top: 0 20px 0 20px;
+        display: flex;
+        justify-content: flex-end;
+    
+        background: #f1f1f1;
+        border-radius: 5px;
+        padding: 5px 10px 10px 10px;
+    }
+
+    .card[pos="down"] .gallery-row {
+    
+        transition-delay: 0.5s !important;
+        opacity: 0.0;
+    }
+    
+}
+
+@media (max-width: 900px) {
+
+    body {
+        scroll-behavior: smooth;
+    }
+
+    
+
+    .scroll,.scroll[pos="down"],.scroll[pos="up"] {
+        display: block;
+    }
+
+    .fade {
+        position: relative;
+        width: 100%;
+        height: 100%;;
+    }
+
+
+
+    .card {
+        position: relative;
+        overflow: auto;
+        overflow-x: hidden;
+
+        min-height: 100%;
+        height: auto;
+    }
+
+    .sub-page {
+        display: block;
+        height: auto;
+
+        margin-top: 50px;
+    }
+
+    .header-menu {
+        opacity: 1.0;
+    }
+
+    .header {
+        position: fixed;
+        z-index: 10;
+    
+        display: flex;
+        width: calc(100% - 50px);
+        padding-right: 50px;
+    
+        justify-content: flex-end;
+        opacity: 1.0;
+    
+        transition-duration: 0.2s;
+
+        background: #f1f1f1;
+    
+    }
+
+    .header-title {
+        position: fixed;
+        top: 5px;
+        left: 50px;
+    }
+
+    .header-menu {
+        margin-top: 0px;
+        padding-top: 0 20px 0 20px;
+        display: flex;
+        justify-content: flex-end;
+    
+        background: #f1f1f1;
+        border-radius: 5px;
+        padding: 5px 10px 10px 10px;
+    }
+
+    .menu-item {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .greeting-text {
+        text-align: center;
+        left: 0;
+        right: 0;
+        width: 100%;
+    }    
+
+    .card-3-background {
+        display: none;
+    }
+
+    .b-left-side {
+        display: none;
+    }
+
+    #c2 {
+        background: #f1f1f1;
+    }
+
+    .b-right-side {
+        height: auto;
+    }
+
+    .contact-panel h2 {
+        margin-top: 0;
+    }
+
+    .contact-panel {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    #c3 {
+        height: 200px;
+        min-height: 200px;
+    }
+
+    .card[pos="down"] .gallery-row {
+
+    }
+
+    .gallery {
+        height: auto;
+    }
+
+    .gallery-row {
+        flex-direction: column;
+    }
+
+    .g-pic {
+        height: 400px;
+    }
+    
+}
+
