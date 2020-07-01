@@ -35,7 +35,7 @@ app.post('/egor', async(req,res) => {
     res.send(200);
 });
 
-app.get('/meth', (req,res) => {
+app.get('/m1', (req,res) => {
     res.send('lol');
 })
 
