@@ -1,14 +1,17 @@
 html
     head
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         title Егор фотограф
         style
             include ./egor.css
     body
-        .header-title#title МОЕ ЛИЦО
+        .header-title
+            #title МОЕ ЛИЦО
+            .title-overlay
+                #title-but
         .header#menu        
-            .header-menu
+            .header-menu#h-menu
                 .menu-selector#selector
                 .menu-item#m0 Мое лицо
                 .menu-item#m1 Портфолио
@@ -95,8 +98,8 @@ html
             
         .text-overlay#submition
             .ty-msg
-                h1= ty1
-                p= ty2 
+                h1= text.ty1
+                p= text.ty2 
             
         script
             include ./egor.js

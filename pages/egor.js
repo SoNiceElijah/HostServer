@@ -5,12 +5,21 @@ let cardLength = 4;
 let cardSubLength = [0,0,3,0];
 
 let scrolling = false;
+const maxScroll = 900; 
+
 document.onwheel = function(e) {
+
+    if(document.body.clientWidth < maxScroll)
+        return;
+
     changeState(Math.sign(e.deltaY));
 }
 
+
+
 function changeState(direction)
 {
+
     if(scrolling)
         return;
 
@@ -133,6 +142,7 @@ function rollBy(p,s)
             setTimeout(() => rollBy(p - Math.sign(p),s),500);
         }
     }
+    document.getElementById('h-menu').removeAttribute('show');
 }
 
 document.getElementById('menu').style.opacity = 1.0;
@@ -230,16 +240,16 @@ function isEmptyOrSpaces(str){
 let start = null;
 window.ontouchstart = function(e){
     if(e.touches.length === 1){
-        start = e.touches.item(0).clientY;
+        start = e.touches.item(0).clientX;
     } else {
         start = null;
     }
 }
 
 window.ontouchend = function(e){
-    let  offset = 30;
+    let  offset = 70;
     if(start){
-        let end = e.changedTouches.item(0).clientY;
+        let end = e.changedTouches.item(0).clientX;
 
         if(end > start + offset){
             changeState(-1);
@@ -248,4 +258,8 @@ window.ontouchend = function(e){
             changeState(1);
         }
     }
+}
+
+document.getElementById('title-but').onclick = (e) => {
+    document.getElementById('h-menu').setAttribute('show','true');
 }
