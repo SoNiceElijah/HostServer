@@ -10,6 +10,7 @@ router.post('/git', (req,res) => {
     if(req.body.ref === 'refs/heads/master')
     {
         cmd.get(`
+            cd ${__dirname}
             git fetch --all
             git reset --hard origin/master
             npm i
