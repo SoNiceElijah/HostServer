@@ -13,7 +13,7 @@ router.post('/git', (req,res) => {
             git fetch --all
             git reset --hard origin/master
             npm i
-            pm2 reload host
+            pm2 reload host.js
         `,(err,data) => {
             if(!err)
             {
