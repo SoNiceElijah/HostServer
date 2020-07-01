@@ -19,6 +19,7 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "js-yaml": "^3.14.0",
+    "node-cmd": "^3.0.0",
     "node-vk-bot-api": "^3.3.4",
     "pug": "^3.0.0"
   }

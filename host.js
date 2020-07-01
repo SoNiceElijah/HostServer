@@ -8,6 +8,8 @@ const fs = require('fs');
 
 const mail = require('./vkmailer');
 
+const updater = require('./lil');
+
 app.set('view engine','pug');
 app.set('views','pages');
 
@@ -38,6 +40,7 @@ app.get('/egor', async (req,res) => {
     res.render('egor',req.model);
 })
 
+app.use(updater);
 app.listen(3000, () => { console.log('up') });
 
 function parse(name)
