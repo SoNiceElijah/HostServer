@@ -13,16 +13,16 @@ router.post('/git', (req,res) => {
             cd ${__dirname}
             git fetch --all
             git reset --hard origin/master
-            npm i
+            npm install
             pm2 reload server
-        `,(err,data) => {
+        `,(err,data,stderr) => {
             if(!err)
             {
                 res.send("Updated:\n" + data);
             }
             else
             {
-                res.status(500).send(JSON.stringify(err));
+                res.status(500).send(JSON.stringify(err) + " " + JSON.stringify(stderr));
             }
 
         })
