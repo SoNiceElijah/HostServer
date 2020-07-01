@@ -14,7 +14,7 @@ router.post('/git', (req,res) => {
             git fetch --all
             git reset --hard origin/master
             npm install
-            pm2 reload server
+            pm2 reload server --force
         `,(err,data,stderr) => {
             if(!err)
             {
