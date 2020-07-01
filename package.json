@@ -2,7 +2,7 @@
   "name": "hostserver",
   "version": "1.0.0",
   "description": "Express page host",
-  "main": "host.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
