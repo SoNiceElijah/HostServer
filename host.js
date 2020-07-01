@@ -35,6 +35,10 @@ app.post('/egor', async(req,res) => {
     res.send(200);
 });
 
+app.get('/check', (res,res) => {
+    res.send('lol');
+})
+
 app.get('/egor', async (req,res) => {
 
     res.render('egor',req.model);
