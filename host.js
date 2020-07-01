@@ -41,7 +41,7 @@ app.get('/egor', async (req,res) => {
 })
 
 app.use(updater);
-app.listen(3000, () => { console.log('up') });
+app.listen(4000, () => { console.log('up') });
 
 function parse(name)
 {
