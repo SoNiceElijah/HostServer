@@ -6,7 +6,7 @@ const cmd = require('node-cmd');
 
 router.post('/git', (req,res) => {
     
-
+    console.log(req.body);
     if(req.body.ref === 'refs/heads/master')
     {
         cmd.get(`
