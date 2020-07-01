@@ -21,7 +21,7 @@ router.post('/git', (req,res) => {
             }
             else
             {
-                res.sendStatus(500);
+                res.status(500).send(JSON.stringify(err));
             }
 
         })
