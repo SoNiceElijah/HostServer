@@ -42,7 +42,6 @@ app.get('/', async (req,res) => {
 })
 
 app.use(updater);
-app.listen(4080, () => { console.log('up') });
 
 try {
     const privateKey = fs.readFileSync('/etc/letsencrypt/live/kalmykov.site/privkey.pem', 'utf8');
@@ -57,9 +56,18 @@ try {
     httpsServer.listen(4443,() => {
         console.log('s up');
     });
+
+    const httpServer = express.createServer();
+    httpServer.get('*',function(req,res) {
+        res.redirect('https://'+req.headers.host + req.url);
+    })
+    httpServer.listen(4080,() => { console.log('up'); });
+
 }
 catch(ex) {
-    console.log(ex);
+    app.listen(4080,() => {
+        console.log('up solo');
+    });
 }
 
 function parse(name)
