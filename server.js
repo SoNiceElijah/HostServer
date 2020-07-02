@@ -17,7 +17,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.use(bp.urlencoded());
 
-app.use('/egor', async (req,res,next) => {
+app.use('/', async (req,res,next) => {
     
     req.model = parse('egor').model;    
     next();
