@@ -58,7 +58,9 @@ try {
         console.log('s up');
     });
 }
-catch(ex) {}
+catch(ex) {
+    console.log(ex);
+}
 
 function parse(name)
 {
