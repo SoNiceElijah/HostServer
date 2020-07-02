@@ -1,7 +1,10 @@
 const VkBot = require('node-vk-bot-api') 
-const bot = new VkBot(process.env.bot)
 
+try {
+const bot = new VkBot(process.env.bot)
 bot.startPolling()
+}
+catch(ex) { };
 
 module.exports = function(msg)
 {

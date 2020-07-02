@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const https = require('https');
 
 const bp = require('body-parser');
 
@@ -42,6 +43,22 @@ app.get('/', async (req,res) => {
 
 app.use(updater);
 app.listen(4080, () => { console.log('up') });
+
+try {
+    const privateKey = fs.readFileSync('/etc/letsencrypt/live/kalmykov.site/privkey.pem', 'utf8');
+    const certificate = fs.readFileSync('/etc/letsencrypt/live/kalmykov.site/cert.pem', 'utf8');
+    const ca = fs.readFileSync('/etc/letsencrypt/live/kalmykov.site/chain.pem', 'utf8');
+
+    const httpsServer = https.createServer({
+        key : privateKey,
+        cert : certificate,
+        ca : ca
+    },app);
+    httpsServer.listen(4443,() => {
+        console.log('s up');
+    });
+}
+catch(ex) {}
 
 function parse(name)
 {
