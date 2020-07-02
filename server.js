@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const https = require('https');
+const http = require('http');
 
 const bp = require('body-parser');
 
@@ -57,7 +58,7 @@ try {
         console.log('s up');
     });
 
-    const httpServer = express.createServer();
+    const httpServer = http.createServer();
     httpServer.get('*',function(req,res) {
         res.redirect('https://'+req.headers.host + req.url);
     })
