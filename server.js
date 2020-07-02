@@ -35,17 +35,13 @@ app.post('/egor', async(req,res) => {
     res.send(200);
 });
 
-app.get('/m4', (req,res) => {
-    res.send('lol');
-})
-
-app.get('/egor', async (req,res) => {
+app.get('/', async (req,res) => {
 
     res.render('egor',req.model);
 })
 
 app.use(updater);
-app.listen(4000, () => { console.log('up') });
+app.listen(4080, () => { console.log('up') });
 
 function parse(name)
 {
