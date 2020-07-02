@@ -65,6 +65,7 @@ try {
 
 }
 catch(ex) {
+    console.log(ex);
     app.listen(4080,() => {
         console.log('up solo');
     });
