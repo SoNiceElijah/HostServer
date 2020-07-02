@@ -58,8 +58,8 @@ try {
         console.log('s up');
     });
 
-    const httpServer = http.createServer();
-    httpServer.get('*',function(req,res) {
+    const httpServer = express();
+    httpServer.get('*',(req,res) => {
         res.redirect('https://'+req.headers.host + req.url);
     })
     httpServer.listen(4080,() => { console.log('up'); });
